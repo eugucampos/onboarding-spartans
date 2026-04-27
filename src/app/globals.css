@@ -1,41 +1,43 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Spartans Brand Identity */
-  --color-background: #002938;
-  --color-foreground: #FAF4E3;
-  --color-card: #001520;
-  --color-card-foreground: #FAF4E3;
-  --color-primary: #E9FF00;
-  --color-primary-foreground: #000000;
-  --color-secondary: #00394D;
-  --color-secondary-foreground: #FAF4E3;
-  --color-muted: #003D52;
-  --color-muted-foreground: #5BA3B5;
-  --color-accent: #007B8D;
-  --color-accent-foreground: #FAF4E3;
-  --color-border: #00495E;
+  /* Spartans Brand Colors */
   --color-lime: #E9FF00;
   --color-teal: #007B8D;
   --color-navy: #002938;
-  --color-cream: #FAF4E3;
   --color-navy-dark: #001520;
   --color-navy-light: #00394D;
+  --color-cream: #FAF4E3;
+  --color-border: #00495E;
+  --color-card: #001520;
+  --color-secondary: #00394D;
+  --color-muted-foreground: #5BA3B5;
+  --color-background: #002938;
+  --color-foreground: #FAF4E3;
+  --color-primary: #E9FF00;
+  --color-primary-foreground: #000000;
+  --color-accent: #007B8D;
+  --color-accent-foreground: #FAF4E3;
+
+  /* Fonts */
   --font-sans: var(--font-work-sans), system-ui, sans-serif;
   --font-serif: var(--font-sora), system-ui, sans-serif;
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-foreground);
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
 }
 
-/* Smooth scrolling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }

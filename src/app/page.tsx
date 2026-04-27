@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function OnboardingPage() {
   return (
     <div className="min-h-screen bg-navy">
@@ -5,10 +7,7 @@ export default function OnboardingPage() {
       <header className="sticky top-0 z-50 border-b border-border bg-navy-dark/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-lime">
-              <span className="font-serif text-sm font-bold text-black">S</span>
-            </div>
-            <span className="font-serif text-lg font-semibold text-cream">Spartans</span>
+            <Image src="/images/logo-spartans.png" alt="Spartans" width={140} height={36} className="h-8 w-auto" />
           </div>
           <span className="text-xs text-muted-foreground">Influencer Briefing</span>
         </div>
