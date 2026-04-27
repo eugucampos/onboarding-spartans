@@ -9,11 +9,11 @@ const menuGroups = [
     tag: "Part 1",
     tagColor: "bg-teal/20 text-teal",
     items: [
-      { id: "onboarding", label: "Onboarding & Setup" },
-      { id: "tracking", label: "Tracking Requirements" },
-      { id: "required-info", label: "Required Information" },
-      { id: "social", label: "Social Media" },
-      { id: "discord", label: "Discord Communication" },
+      { id: "onboarding", label: "Onboarding & Setup", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
+      { id: "tracking", label: "Tracking Requirements", icon: "M12 9v2m0 4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" },
+      { id: "required-info", label: "Required Information", icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
+      { id: "social", label: "Social Media", icon: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" },
+      { id: "discord", label: "Discord Communication", icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" },
     ],
   },
   {
@@ -21,15 +21,15 @@ const menuGroups = [
     tag: "Part 2",
     tagColor: "bg-lime/20 text-lime",
     items: [
-      { id: "goals", label: "Campaign Goals" },
-      { id: "cashrake", label: "CashRake System" },
-      { id: "leaderboard", label: "Leaderboard" },
-      { id: "vip", label: "VIP & High Roller" },
-      { id: "giveaway", label: "Giveaway Campaign" },
-      { id: "content", label: "Content Requirements" },
-      { id: "guidelines", label: "Communication Guidelines" },
-      { id: "tips", label: "Final Tips" },
-      { id: "faq", label: "FAQs" },
+      { id: "goals", label: "Campaign Goals", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
+      { id: "cashrake", label: "CashRake System", icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+      { id: "leaderboard", label: "Leaderboard", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" },
+      { id: "vip", label: "VIP & High Roller", icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" },
+      { id: "giveaway", label: "Giveaway Campaign", icon: "M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" },
+      { id: "content", label: "Content Requirements", icon: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" },
+      { id: "guidelines", label: "Communication Guidelines", icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" },
+      { id: "tips", label: "Final Tips", icon: "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" },
+      { id: "faq", label: "FAQs", icon: "M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
     ],
   },
 ];
@@ -50,191 +50,117 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-navy">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-border bg-navy-dark/90 backdrop-blur-md">
-        <div className="flex items-center justify-between px-4 py-3 sm:px-6">
-          <div className="flex items-center gap-3">
-            {/* Mobile menu toggle */}
-            <button
-              onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-secondary text-cream transition-colors hover:border-lime/30 lg:hidden"
-              aria-label="Toggle menu"
-            >
-              {sidebarOpen ? (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
-              ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
-              )}
-            </button>
-            <button onClick={() => selectSection("home")} className="flex items-center">
-              <Image src="/images/logo-spartans.png" alt="Spartans" width={160} height={40} className="h-9 w-auto" />
-            </button>
-          </div>
-          <span className="text-xs text-muted-foreground">Influencer Briefing</span>
+    <div className="min-h-screen bg-navy flex">
+      {/* Sidebar overlay for mobile */}
+      {sidebarOpen && (
+        <div className="fixed inset-0 z-30 bg-black/60 lg:hidden" onClick={() => setSidebarOpen(false)} />
+      )}
+
+      {/* Sidebar */}
+      <aside
+        className={`fixed top-0 left-0 z-40 flex h-screen flex-col border-r border-border bg-navy-dark transition-all duration-300 lg:sticky lg:translate-x-0 lg:z-auto ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+        } ${sidebarCollapsed ? "w-[68px]" : "w-64"}`}
+      >
+        {/* Logo area */}
+        <div className={`flex items-center border-b border-border ${sidebarCollapsed ? "justify-center p-3" : "p-5"}`}>
+          <button onClick={() => selectSection("home")} className="flex items-center">
+            {sidebarCollapsed ? (
+              <Image src="/images/helmet-green.png" alt="Spartans" width={32} height={32} className="h-8 w-8" />
+            ) : (
+              <Image src="/images/spartans-logo.png" alt="Spartans" width={150} height={38} className="h-8 w-auto" />
+            )}
+          </button>
         </div>
-      </header>
 
-      <div className="flex">
-        {/* Sidebar overlay for mobile */}
-        {sidebarOpen && (
-          <div className="fixed inset-0 z-30 bg-black/60 lg:hidden" onClick={() => setSidebarOpen(false)} />
-        )}
+        {/* Navigation */}
+        <nav className="flex-1 overflow-y-auto p-3">
+          {menuGroups.map((group, gIdx) => (
+            <div key={group.label} className="mb-1">
+              {!sidebarCollapsed && (
+                <button
+                  onClick={() => toggleGroup(gIdx)}
+                  className="flex w-full items-center justify-between rounded-lg px-2 py-2 text-left transition-colors hover:bg-secondary"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${group.tagColor}`}>{group.tag}</span>
+                    <span className="text-xs font-medium text-cream">{group.label}</span>
+                  </div>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className={`text-muted-foreground transition-transform duration-200 ${expandedGroups[gIdx] ? "rotate-180" : ""}`}>
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+              )}
 
-        {/* Sidebar */}
-        <aside
-          className={`fixed top-[57px] left-0 z-40 h-[calc(100vh-57px)] overflow-y-auto border-r border-border bg-navy-dark transition-all duration-300 lg:sticky lg:translate-x-0 lg:z-auto ${
-            sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
-          } ${sidebarCollapsed ? "w-16" : "w-72"}`}
-        >
-          {/* Collapse toggle (desktop only) */}
-          <div className="hidden lg:flex items-center justify-end p-2">
-            <button
-              onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-              className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-secondary hover:text-cream"
-              aria-label={sidebarCollapsed ? "Expand menu" : "Collapse menu"}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                {sidebarCollapsed ? (
-                  <path d="M9 18l6-6-6-6" />
-                ) : (
-                  <path d="M15 18l-6-6 6-6" />
-                )}
-              </svg>
-            </button>
-          </div>
-
-          {/* Collapsed state: helmet + icon dots */}
-          {sidebarCollapsed ? (
-            <div className="flex flex-col items-center gap-1 px-1 pt-2">
-              <button
-                onClick={() => selectSection("home")}
-                className={`mb-2 flex h-10 w-10 items-center justify-center rounded-xl transition-colors ${
-                  activeSection === "home" ? "bg-lime/10 ring-1 ring-lime/30" : "hover:bg-secondary"
-                }`}
-                title="Home"
-              >
-                <Image src="/images/helmet-green.png" alt="Spartans" width={28} height={28} className="h-7 w-7" />
-              </button>
-              {menuGroups.map((group) =>
-                group.items.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => selectSection(item.id)}
-                    className={`flex h-9 w-9 items-center justify-center rounded-lg text-xs font-medium transition-colors ${
-                      activeSection === item.id
-                        ? "bg-lime/10 text-lime"
-                        : "text-muted-foreground hover:bg-secondary hover:text-cream"
-                    }`}
-                    title={item.label}
-                  >
-                    {item.label.charAt(0)}
-                  </button>
-                ))
+              {(sidebarCollapsed || expandedGroups[gIdx]) && (
+                <div className={sidebarCollapsed ? "space-y-1" : "mt-1 space-y-0.5"}>
+                  {group.items.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => selectSection(item.id)}
+                      className={`flex w-full items-center gap-3 rounded-lg transition-colors ${
+                        sidebarCollapsed ? "justify-center px-0 py-2.5" : "px-3 py-2"
+                      } ${
+                        activeSection === item.id
+                          ? "bg-lime/10 text-lime"
+                          : "text-muted-foreground hover:bg-secondary hover:text-cream"
+                      }`}
+                      title={sidebarCollapsed ? item.label : undefined}
+                    >
+                      <svg className="h-[18px] w-[18px] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
+                      </svg>
+                      {!sidebarCollapsed && <span className="text-sm">{item.label}</span>}
+                    </button>
+                  ))}
+                </div>
               )}
             </div>
-          ) : (
-            <>
-              <nav className="p-4">
-                {/* Home link */}
-                <button
-                  onClick={() => selectSection("home")}
-                  className={`mb-4 flex w-full items-center gap-3 rounded-lg px-2 py-2 text-left transition-colors ${
-                    activeSection === "home"
-                      ? "bg-lime/10 text-lime"
-                      : "text-muted-foreground hover:bg-secondary hover:text-cream"
-                  }`}
-                >
-                  <Image src="/images/helmet-green.png" alt="" width={20} height={20} className="h-5 w-5" />
-                  <span className="text-sm font-medium">Home</span>
-                </button>
+          ))}
+        </nav>
 
-                <p className="mb-3 px-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Navigation</p>
-                {menuGroups.map((group, gIdx) => (
-                  <div key={group.label} className="mb-2">
-                    <button
-                      onClick={() => toggleGroup(gIdx)}
-                      className="flex w-full items-center justify-between rounded-lg px-2 py-2 text-left transition-colors hover:bg-secondary"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${group.tagColor}`}>{group.tag}</span>
-                        <span className="text-sm font-medium text-cream">{group.label}</span>
-                      </div>
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        className={`text-muted-foreground transition-transform duration-200 ${expandedGroups[gIdx] ? "rotate-180" : ""}`}
-                      >
-                        <path d="M6 9l6 6 6-6" />
-                      </svg>
-                    </button>
-
-                    {expandedGroups[gIdx] && (
-                      <div className="mt-1 ml-3 space-y-0.5 border-l border-border pl-3">
-                        {group.items.map((item) => (
-                          <button
-                            key={item.id}
-                            onClick={() => selectSection(item.id)}
-                            className={`w-full rounded-lg px-3 py-2 text-left text-sm transition-colors ${
-                              activeSection === item.id
-                                ? "bg-lime/10 font-medium text-lime"
-                                : "text-muted-foreground hover:bg-secondary hover:text-cream"
-                            }`}
-                          >
-                            {item.label}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </nav>
-
-              <div className="border-t border-border p-4">
-                <p className="text-[10px] text-muted-foreground">Last update: 24.04.2026</p>
-              </div>
-            </>
+        {/* Collapse toggle + version */}
+        <div className="border-t border-border p-3">
+          <button
+            onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+            className={`flex w-full items-center gap-3 rounded-lg px-2 py-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-cream ${sidebarCollapsed ? "justify-center" : ""}`}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+              {sidebarCollapsed ? <path d="M13 5l7 7-7 7M5 5l7 7-7 7" /> : <path d="M11 19l-7-7 7-7M19 19l-7-7 7-7" />}
+            </svg>
+            {!sidebarCollapsed && <span className="text-xs">Collapse</span>}
+          </button>
+          {!sidebarCollapsed && (
+            <p className="mt-2 px-2 text-[10px] text-muted-foreground/50">Last update: 24.04.2026</p>
           )}
-        </aside>
+        </div>
+      </aside>
 
-        {/* Main content */}
-        <main className="min-h-[calc(100vh-57px)] flex-1 px-6 py-10 lg:px-12">
+      {/* Main content area */}
+      <div className="flex-1 flex flex-col min-h-screen">
+        {/* Mobile header (only on small screens) */}
+        <header className="sticky top-0 z-20 flex items-center gap-3 border-b border-border bg-navy-dark/90 px-4 py-3 backdrop-blur-md lg:hidden">
+          <button
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-secondary text-cream"
+            aria-label="Toggle menu"
+          >
+            {sidebarOpen ? (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
+            )}
+          </button>
+          <Image src="/images/spartans-logo.png" alt="Spartans" width={120} height={30} className="h-7 w-auto" />
+        </header>
+
+        {/* Page content */}
+        <main className="flex-1 px-6 py-10 lg:px-12">
           <div className="mx-auto max-w-3xl">
             <SectionContent id={activeSection} />
           </div>
         </main>
       </div>
-
-      {/* Footer */}
-      <footer className="border-t border-border bg-navy-dark">
-        <div className="mx-auto max-w-4xl px-6 py-10">
-          {/* Company Info */}
-          <p className="mb-8 text-center text-xs leading-relaxed text-muted-foreground">
-            Spartans.com is owned and operated by Nexus International Entertainment Ltd. registration number: 000043488, registered address: 9 Barrack Road, Belize City, Belize. Contact us{" "}
-            <a href="mailto:support@spartans.com" className="text-teal underline hover:text-lime">support@spartans.com</a>.{" "}
-            Spartans.com is licensed and regulated by the Government of the Autonomous Island of Anjouan, Union of Comoros and operates under License No. ALSI-202409038-F12. Spartans.com has passed all regulatory compliance and is legally authorized to conduct gaming operations for any and all games of chance and wagering.
-          </p>
-
-          {/* Responsible Gaming Logos */}
-          <div className="mb-8 flex flex-wrap items-center justify-center gap-6">
-            <Image src="/images/footer/gameanon.png" alt="Gamblers Anonymous" width={36} height={37} className="h-9 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-            <Image src="/images/footer/responsible.png" alt="Responsible Gaming" width={93} height={30} className="h-7 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-            <Image src="/images/footer/18.png" alt="18+" width={33} height={32} className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-            <Image src="/images/footer/gambling-therapy.png" alt="Gambling Therapy" width={74} height={29} className="h-7 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-            <Image src="/images/footer/begamble.png" alt="BeGambleAware" width={151} height={20} className="h-5 w-auto opacity-60 hover:opacity-100 transition-opacity" />
-          </div>
-
-          {/* Copyright */}
-          <p className="text-center text-xs text-muted-foreground">
-            Copyright &copy; 2026 All Rights Reserved.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
@@ -367,21 +293,62 @@ function SectionContent({ id }: { id: string }) {
     case "cashrake":
       return (
         <ContentBlock title="CashRake = Cashback + Rakeback" icon="💰">
+          {/* How it works */}
+          <p className="mb-4 text-muted-foreground">
+            CashRake is the world&apos;s first system that pays players win or lose. It&apos;s not a temporary promotion — it&apos;s the core infrastructure of the Spartans platform. Every bet triggers a return, no matter the outcome.
+          </p>
+
+          {/* Two streams */}
           <div className="mb-6 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-lime/20 bg-lime/5 p-5">
               <p className="font-serif text-2xl font-bold text-lime">Up to 3%</p>
-              <p className="text-sm text-muted-foreground">Base return on every losing wager, no waiting</p>
+              <p className="text-sm font-medium text-cream">Instant Cashback</p>
+              <p className="mt-1 text-xs text-muted-foreground">Base return on every losing wager, no waiting. Goes straight to the player&apos;s main balance — no locked bonus wallet, no wagering requirements.</p>
             </div>
             <div className="rounded-lg border border-teal/20 bg-teal/5 p-5">
               <p className="font-serif text-2xl font-bold text-teal">Up to 33%</p>
-              <p className="text-sm text-muted-foreground">Rakeback of the House Edge directly to your wallet</p>
+              <p className="text-sm font-medium text-cream">Ongoing Rakeback</p>
+              <p className="mt-1 text-xs text-muted-foreground">Of the House Edge returned progressively as players bet, regardless of outcome. Both streams feed into a single 33% cap based on total deposits.</p>
             </div>
           </div>
-          <p className="mb-6 text-sm text-muted-foreground">Rewards applied automatically on every spin.</p>
+
+          <p className="mb-6 text-sm text-muted-foreground">Rewards applied automatically on every spin. Paid as real cash — withdraw or play again immediately.</p>
+
+          {/* Deposit cap */}
+          <div className="mb-6 rounded-lg border border-border bg-secondary p-5">
+            <p className="mb-2 text-sm font-medium text-cream">How the Limit Works</p>
+            <p className="text-sm text-muted-foreground">The CashRake cap = <strong className="text-cream">33% of total deposits</strong>.</p>
+            <div className="mt-3 grid gap-2 sm:grid-cols-3">
+              <div className="rounded-lg bg-navy-light/50 p-3 text-center">
+                <p className="font-serif text-lg font-bold text-lime">$100</p>
+                <p className="text-[10px] text-muted-foreground">Deposit</p>
+                <p className="text-xs text-cream">Cap: $33</p>
+              </div>
+              <div className="rounded-lg bg-navy-light/50 p-3 text-center">
+                <p className="font-serif text-lg font-bold text-lime">$300</p>
+                <p className="text-[10px] text-muted-foreground">Deposit</p>
+                <p className="text-xs text-cream">Cap: $99</p>
+              </div>
+              <div className="rounded-lg bg-navy-light/50 p-3 text-center">
+                <p className="font-serif text-lg font-bold text-lime">$1,000</p>
+                <p className="text-[10px] text-muted-foreground">Deposit</p>
+                <p className="text-xs text-cream">Cap: $330</p>
+              </div>
+            </div>
+            <p className="mt-3 text-xs text-muted-foreground">Once the cap is reached, CashRake pauses. Deposit more and the cap increases — earning resumes.</p>
+          </div>
+
+          {/* Game coverage */}
+          <div className="mb-6 rounded-lg border border-lime/20 bg-lime/5 p-4">
+            <p className="mb-1 text-sm font-medium text-cream">5,900+ games from 43+ providers</p>
+            <p className="text-xs text-muted-foreground">Slots, live tables, crash games, blackjack, roulette, sportsbook — every single one feeds CashRake toward the same cap.</p>
+          </div>
+
           <div className="mb-6 rounded-lg border border-lime/30 bg-lime/5 p-4">
             <p className="font-serif text-sm font-semibold text-lime">Core message: &quot;You win even when you lose.&quot;</p>
           </div>
 
+          {/* RTP Table */}
           <p className="mb-3 text-sm font-medium text-cream">CashRake Rates by RTP:</p>
           <div className="overflow-x-auto rounded-lg border border-border">
             <table className="w-full text-sm">
@@ -418,8 +385,20 @@ function SectionContent({ id }: { id: string }) {
           </div>
           <p className="mt-3 text-xs text-muted-foreground">Sports bets are calculated from 97% RTP</p>
 
+          {/* Important rules */}
+          <div className="mt-6 rounded-lg border border-red-500/20 bg-red-500/5 p-4">
+            <p className="mb-2 text-sm font-medium text-red-400">Important Rules</p>
+            <ul className="space-y-1.5 text-sm text-muted-foreground">
+              <li><strong className="text-cream">24-hour claim window:</strong> Players must claim CashRake within 24 hours of their last claim, or the balance resets</li>
+              <li>Cashed-out or refunded sports bets do not count</li>
+              <li>Only bets with real cash qualify — bonus totals are excluded</li>
+              <li>Any fraud, abuse, or low-risk farming tricks can result in a ban</li>
+            </ul>
+          </div>
+
+          {/* Weekly calculation */}
           <div className="mt-6 rounded-lg border border-border bg-secondary p-4">
-            <p className="mb-2 text-sm font-medium text-cream">How CashRake is calculated:</p>
+            <p className="mb-2 text-sm font-medium text-cream">Weekly CashRake Calculation:</p>
             <ul className="mb-3 space-y-1.5 text-sm text-muted-foreground">
               <li>Calculated weekly (Friday to Thursday)</li>
               <li>Paid every Friday</li>
@@ -631,8 +610,16 @@ function SectionContent({ id }: { id: string }) {
       return (
         <ContentBlock title="FAQs" icon="💡">
           <div className="space-y-3">
-            <FaqCard q="How does CashRake work?" url="https://spartans.com/en/how-cashrake-works" />
-            <FaqCard q="How does the leaderboard work?" url="https://spartansleaderboards.com/faq" />
+            <p className="text-sm font-medium text-lime">Leaderboard</p>
+            <FaqAccordion q="How do I participate in the leaderboard?" a="When registering, add the specific referral code of the leaderboard you want to join. Your gaming activities will be automatically tracked and counted toward your progress once registered with the correct code." />
+            <FaqAccordion q="What are Spartans Points (SP)?" a="SP are the scoring currency of the leaderboard. You earn SP based on the house edge of games you bet on. Casino games generate SP equivalent to the house edge (e.g., 3.5% house edge = 3.5 SP per dollar wagered). Sports betting generates 2 SP per dollar wagered. Typical slots generate 3.5–4 SP per dollar wagered." />
+            <FaqAccordion q="How are Spartans Points calculated?" a="SP = House Edge % × Amount Wagered (for casino). Sports betting: fixed 2 SP per dollar wagered. The more SP you accumulate, the higher your ranking." />
+            <FaqAccordion q="When do leaderboard competitions happen?" a="Each leaderboard has a specific competition period which may vary. Start/end dates and schedules are communicated on the leaderboard page." />
+            <FaqAccordion q="How are prizes distributed?" a="Prizes are distributed automatically at the end of each competition based on your final SP ranking. Processing may take up to 7 days. To be eligible for withdrawal, rewards must be wagered at least once at minimum odds of 1.30 (Decimal) / -333 (American) / 3/10 (Fractional). This also applies to Casino Crash games." />
+            <FaqAccordion q="What is considered prohibited behavior?" a="Prohibited behavior includes data manipulation, exploitation of technical glitches, collusion to inflate SP, low-risk gaming only to accumulate SP, or any fraud/system abuse. Players may be disqualified and banned." />
+            <FaqAccordion q="Can I transfer SP between leaderboards?" a="No. Spartans Points are specific to each leaderboard and cannot be transferred. Each leaderboard has its own independent SP accumulator." />
+            <FaqAccordion q="Which game gives me the most SP?" a="Games with higher house edges generate more SP per dollar wagered. Check the RTP and house edge for each game on Spartans.com to determine which games earn the most SP." />
+            <FaqAccordion q="How do I contact support?" a={<>Questions about the leaderboard? Contact support via live chat on Spartans.com or email <a href="mailto:support@spartans.com" className="text-teal underline hover:text-lime">support@spartans.com</a>.</>} />
           </div>
         </ContentBlock>
       );
@@ -715,11 +702,33 @@ function GoalCard({ text }: { text: string }) {
   );
 }
 
-function FaqCard({ q, url }: { q: string; url: string }) {
+function FaqAccordion({ q, a }: { q: string; a: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer" className="block rounded-lg border border-border bg-secondary p-4 transition-colors hover:border-teal/30">
-      <p className="text-sm font-medium text-cream">{q}</p>
-      <p className="mt-1 text-xs text-teal">{url.replace("https://", "")} &rarr;</p>
-    </a>
+    <div className="rounded-lg border border-border bg-secondary">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-navy-light/30"
+      >
+        <p className="text-sm font-medium text-cream">{q}</p>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          className={`shrink-0 ml-3 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+      {open && (
+        <div className="border-t border-border px-4 py-3">
+          <div className="text-sm leading-relaxed text-muted-foreground">{a}</div>
+        </div>
+      )}
+    </div>
   );
 }
