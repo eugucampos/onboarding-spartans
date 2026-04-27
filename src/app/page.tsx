@@ -1,72 +1,163 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+
+const menuGroups = [
+  {
+    label: "Before the Start",
+    tag: "Part 1",
+    tagColor: "bg-teal/20 text-teal",
+    items: [
+      { id: "onboarding", label: "Onboarding & Setup" },
+      { id: "tracking", label: "Tracking Requirements" },
+      { id: "social", label: "Social Media" },
+      { id: "discord", label: "Discord Communication" },
+    ],
+  },
+  {
+    label: "During the Campaign",
+    tag: "Part 2",
+    tagColor: "bg-lime/20 text-lime",
+    items: [
+      { id: "goals", label: "Campaign Goals" },
+      { id: "cashrake", label: "CashRake System" },
+      { id: "leaderboard", label: "Leaderboard" },
+      { id: "vip", label: "VIP & High Roller" },
+      { id: "cashback", label: "Cashback System" },
+      { id: "giveaway", label: "Giveaway Campaign" },
+      { id: "content", label: "Content Requirements" },
+      { id: "guidelines", label: "Communication Guidelines" },
+      { id: "tips", label: "Final Tips" },
+      { id: "faq", label: "FAQs" },
+    ],
+  },
+];
 
 export default function OnboardingPage() {
+  const [activeSection, setActiveSection] = useState("onboarding");
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [expandedGroups, setExpandedGroups] = useState<Record<number, boolean>>({ 0: true, 1: true });
+
+  function toggleGroup(idx: number) {
+    setExpandedGroups((prev) => ({ ...prev, [idx]: !prev[idx] }));
+  }
+
+  function selectSection(id: string) {
+    setActiveSection(id);
+    setSidebarOpen(false);
+  }
+
   return (
     <div className="min-h-screen bg-navy">
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-border bg-navy-dark/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+        <div className="flex items-center justify-between px-4 py-3 sm:px-6">
           <div className="flex items-center gap-3">
-            <Image src="/images/logo-spartans.png" alt="Spartans" width={140} height={36} className="h-8 w-auto" />
+            <button
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-secondary text-cream transition-colors hover:border-lime/30 lg:hidden"
+              aria-label="Toggle menu"
+            >
+              {sidebarOpen ? (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
+              ) : (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 12h18M3 6h18M3 18h18" /></svg>
+              )}
+            </button>
+            <Image src="/images/Logo_green.png" alt="Spartans" width={140} height={36} className="h-8 w-auto" />
           </div>
           <span className="text-xs text-muted-foreground">Influencer Briefing</span>
         </div>
       </header>
 
-      <main className="mx-auto max-w-4xl px-6 py-12">
-        {/* Hero */}
-        <section className="mb-16 text-center">
-          <div className="mb-4 inline-block rounded-full bg-lime/10 px-4 py-1.5">
-            <span className="font-serif text-sm font-medium text-lime">Creator Program</span>
-          </div>
-          <h1 className="mb-4 font-serif text-4xl font-bold tracking-tight text-cream sm:text-5xl">
-            Influencer Briefing
-          </h1>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Welcome to the Spartans Creator Program. Our goal is to collaborate with you to drive high-quality traffic, deposits, and player engagement through your content.
-          </p>
-          <p className="mt-4 text-sm text-muted-foreground">Last update: 24.04.2026</p>
-        </section>
+      <div className="flex">
+        {/* Sidebar overlay for mobile */}
+        {sidebarOpen && (
+          <div className="fixed inset-0 z-30 bg-black/60 lg:hidden" onClick={() => setSidebarOpen(false)} />
+        )}
 
-        {/* Table of Contents */}
-        <nav className="mb-16 rounded-xl border border-border bg-card p-6">
-          <h2 className="mb-4 font-serif text-lg font-semibold text-lime">Table of Contents</h2>
-          <div className="grid gap-2 sm:grid-cols-2">
-            <div>
-              <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">1. Before the Start</p>
-              <ul className="space-y-1.5 text-sm">
-                <li><a href="#onboarding" className="text-cream hover:text-lime transition-colors">Onboarding & Setup</a></li>
-                <li><a href="#tracking" className="text-cream hover:text-lime transition-colors">Tracking Requirements</a></li>
-                <li><a href="#social" className="text-cream hover:text-lime transition-colors">Social Media</a></li>
-                <li><a href="#discord" className="text-cream hover:text-lime transition-colors">Discord Communication</a></li>
-              </ul>
-            </div>
-            <div>
-              <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">2. During the Campaign</p>
-              <ul className="space-y-1.5 text-sm">
-                <li><a href="#goals" className="text-cream hover:text-lime transition-colors">Campaign Goals</a></li>
-                <li><a href="#cashrake" className="text-cream hover:text-lime transition-colors">CashRake System</a></li>
-                <li><a href="#leaderboard" className="text-cream hover:text-lime transition-colors">Leaderboard</a></li>
-                <li><a href="#vip" className="text-cream hover:text-lime transition-colors">VIP & High Roller</a></li>
-                <li><a href="#giveaway" className="text-cream hover:text-lime transition-colors">Giveaway Campaign</a></li>
-                <li><a href="#content" className="text-cream hover:text-lime transition-colors">Content Requirements</a></li>
-                <li><a href="#guidelines" className="text-cream hover:text-lime transition-colors">Communication Guidelines</a></li>
-                <li><a href="#faq" className="text-cream hover:text-lime transition-colors">FAQs</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        {/* Sidebar */}
+        <aside
+          className={`fixed top-[57px] left-0 z-40 h-[calc(100vh-57px)] w-72 overflow-y-auto border-r border-border bg-navy-dark transition-transform duration-300 lg:sticky lg:translate-x-0 lg:z-auto ${
+            sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
+          <nav className="p-4">
+            <p className="mb-4 px-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Navigation</p>
+            {menuGroups.map((group, gIdx) => (
+              <div key={group.label} className="mb-2">
+                <button
+                  onClick={() => toggleGroup(gIdx)}
+                  className="flex w-full items-center justify-between rounded-lg px-2 py-2 text-left transition-colors hover:bg-secondary"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${group.tagColor}`}>{group.tag}</span>
+                    <span className="text-sm font-medium text-cream">{group.label}</span>
+                  </div>
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    className={`text-muted-foreground transition-transform duration-200 ${expandedGroups[gIdx] ? "rotate-180" : ""}`}
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
 
-        {/* ═══ PART 1 ═══ */}
-        <div className="mb-8">
-          <div className="inline-block rounded-full bg-teal/20 px-3 py-1">
-            <span className="text-xs font-medium text-teal">Part 1</span>
-          </div>
-        </div>
-        <h2 className="mb-10 font-serif text-3xl font-bold text-cream">Before the Start</h2>
+                {expandedGroups[gIdx] && (
+                  <div className="mt-1 ml-3 space-y-0.5 border-l border-border pl-3">
+                    {group.items.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => selectSection(item.id)}
+                        className={`w-full rounded-lg px-3 py-2 text-left text-sm transition-colors ${
+                          activeSection === item.id
+                            ? "bg-lime/10 font-medium text-lime"
+                            : "text-muted-foreground hover:bg-secondary hover:text-cream"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
 
-        {/* Onboarding */}
-        <Section id="onboarding" title="Onboarding & Setup" icon="1">
+          <div className="border-t border-border p-4">
+            <p className="text-[10px] text-muted-foreground">Last update: 24.04.2026</p>
+          </div>
+        </aside>
+
+        {/* Main content */}
+        <main className="min-h-[calc(100vh-57px)] flex-1 px-6 py-10 lg:px-12">
+          <div className="mx-auto max-w-3xl">
+            <SectionContent id={activeSection} />
+          </div>
+        </main>
+      </div>
+
+      {/* Footer */}
+      <footer className="border-t border-border py-8 text-center">
+        <p className="text-xs text-muted-foreground">SPARTANS.COM &copy; 2026 All rights reserved</p>
+      </footer>
+    </div>
+  );
+}
+
+/* ═══ Section Content Router ═══ */
+
+function SectionContent({ id }: { id: string }) {
+  switch (id) {
+    case "onboarding":
+      return (
+        <ContentBlock title="Onboarding & Setup" icon="1">
           <p className="mb-4 text-muted-foreground">You will receive:</p>
           <div className="grid gap-3 sm:grid-cols-2">
             <InfoCard title="Referral Link" example="spartans.com/?c=PROMOCODE&affiliateid=000000" />
@@ -74,10 +165,12 @@ export default function OnboardingPage() {
             <InfoCard title="Demo Account" example="Credentials (if applicable)" />
             <InfoCard title="Stream Assets" example="Animated banner + Static panel" />
           </div>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* Tracking */}
-        <Section id="tracking" title="Tracking Requirements" icon="!" variant="warning">
+    case "tracking":
+      return (
+        <ContentBlock title="Tracking Requirements" icon="!" variant="warning">
           <p className="mb-4 text-muted-foreground">For proper tracking, users <strong className="text-cream">MUST</strong>:</p>
           <ul className="space-y-2">
             <CheckItem text="Register using your referral link" />
@@ -86,10 +179,12 @@ export default function OnboardingPage() {
           <div className="mt-4 rounded-lg border border-red-500/30 bg-red-500/5 p-4">
             <p className="text-sm text-red-400">Missing either element = incorrect or lost tracking</p>
           </div>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* Social Media */}
-        <Section id="social" title="Social Media" icon="2">
+    case "social":
+      return (
+        <ContentBlock title="Social Media" icon="2">
           <p className="mb-4 text-muted-foreground">
             As part of onboarding, follow and tag Spartans on every deliverable:
           </p>
@@ -100,10 +195,12 @@ export default function OnboardingPage() {
           <p className="mt-4 text-sm text-muted-foreground">
             Content shared by us also counts as a deliverable under the cooperation agreement.
           </p>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* Discord */}
-        <Section id="discord" title="Discord Communication" icon="3">
+    case "discord":
+      return (
+        <ContentBlock title="Discord Communication" icon="3">
           <p className="mb-4 text-muted-foreground">There are 3 main channels:</p>
           <div className="space-y-2">
             <ChannelCard emoji="📑" name="Deliverables Tracker" desc="Post completed content daily" />
@@ -115,28 +212,24 @@ export default function OnboardingPage() {
               <strong className="text-cream">Manager availability:</strong> Mon-Fri 08:00-22:00/24:00 CEST | Weekends: emergency only
             </p>
           </div>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* ═══ PART 2 ═══ */}
-        <div className="mb-8 mt-20">
-          <div className="inline-block rounded-full bg-lime/20 px-3 py-1">
-            <span className="text-xs font-medium text-lime">Part 2</span>
-          </div>
-        </div>
-        <h2 className="mb-10 font-serif text-3xl font-bold text-cream">During the Campaign</h2>
-
-        {/* Goals */}
-        <Section id="goals" title="Campaign Goals" icon="🔥">
+    case "goals":
+      return (
+        <ContentBlock title="Campaign Goals" icon="🔥">
           <div className="grid gap-2 sm:grid-cols-2">
             <GoalCard text="Promote your referral link + promo code" />
             <GoalCard text="Drive deposits and player activity" />
             <GoalCard text="Attract high-value players (VIPs)" />
             <GoalCard text="Maintain strong and consistent engagement" />
           </div>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* CashRake */}
-        <Section id="cashrake" title="CashRake = Cashback + Rakeback" icon="💰">
+    case "cashrake":
+      return (
+        <ContentBlock title="CashRake = Cashback + Rakeback" icon="💰">
           <div className="mb-6 grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-lime/20 bg-lime/5 p-5">
               <p className="font-serif text-2xl font-bold text-lime">Up to 3%</p>
@@ -147,13 +240,51 @@ export default function OnboardingPage() {
               <p className="text-sm text-muted-foreground">Rakeback of the House Edge to your wallet</p>
             </div>
           </div>
-          <div className="rounded-lg border border-lime/30 bg-lime/5 p-4">
+          <div className="mb-6 rounded-lg border border-lime/30 bg-lime/5 p-4">
             <p className="font-serif text-sm font-semibold text-lime">Core message: &quot;You win even when you lose.&quot;</p>
           </div>
-        </Section>
 
-        {/* Leaderboard */}
-        <Section id="leaderboard" title="Leaderboard System" icon="🏆">
+          <p className="mb-3 text-sm font-medium text-cream">CashRake Rates by RTP:</p>
+          <div className="overflow-x-auto rounded-lg border border-border">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border bg-secondary">
+                  <th className="px-4 py-2.5 text-left font-medium text-cream">RTP</th>
+                  <th className="px-4 py-2.5 text-left font-medium text-cream">Cashback %</th>
+                  <th className="px-4 py-2.5 text-left font-medium text-cream">Rakeback %</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                {[
+                  { rtp: "94", cashback: "3", rakeback: "33" },
+                  { rtp: "94.5", cashback: "2.7", rakeback: "33" },
+                  { rtp: "95", cashback: "2.30", rakeback: "33" },
+                  { rtp: "95.5", cashback: "1.95", rakeback: "33" },
+                  { rtp: "96", cashback: "1.56", rakeback: "33" },
+                  { rtp: "96.5", cashback: "1.25", rakeback: "33" },
+                  { rtp: "97", cashback: "0.84", rakeback: "25" },
+                  { rtp: "97.5", cashback: "0.00", rakeback: "20" },
+                  { rtp: "98", cashback: "0.00", rakeback: "15" },
+                  { rtp: "98.5", cashback: "0.00", rakeback: "10" },
+                  { rtp: "99", cashback: "0.00", rakeback: "5" },
+                  { rtp: "99.5", cashback: "0.00", rakeback: "3" },
+                ].map((row) => (
+                  <tr key={row.rtp} className="transition-colors hover:bg-secondary/50">
+                    <td className="px-4 py-2 text-cream">{row.rtp}</td>
+                    <td className="px-4 py-2 text-lime">{row.cashback}%</td>
+                    <td className="px-4 py-2 text-teal">{row.rakeback}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">Sports bets are calculated from 97% RTP</p>
+        </ContentBlock>
+      );
+
+    case "leaderboard":
+      return (
+        <ContentBlock title="Leaderboard System" icon="🏆">
           <ul className="mb-6 space-y-2 text-muted-foreground">
             <li>Top 10 players receive rewards (by default)</li>
             <li>Updated hourly</li>
@@ -182,10 +313,12 @@ export default function OnboardingPage() {
           <p className="mt-4 text-sm text-muted-foreground">
             Leaderboards can be adjusted during setup. Once created, no changes can be made.
           </p>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* VIP */}
-        <Section id="vip" title="VIP & High Roller System" icon="💎">
+    case "vip":
+      return (
+        <ContentBlock title="VIP & High Roller System" icon="💎">
           <div className="mb-6 grid gap-4 sm:grid-cols-2">
             <div>
               <p className="mb-2 text-sm font-medium text-cream">VIP Requirements:</p>
@@ -204,7 +337,6 @@ export default function OnboardingPage() {
               </ul>
             </div>
           </div>
-
           <div className="mb-6 rounded-lg border border-border bg-secondary p-4">
             <p className="mb-2 text-sm font-medium text-cream">VIP Rules:</p>
             <ul className="space-y-1 text-sm text-muted-foreground">
@@ -214,7 +346,6 @@ export default function OnboardingPage() {
               <li>VIP access requires full verification</li>
             </ul>
           </div>
-
           <div className="rounded-lg border border-lime/20 bg-lime/5 p-4">
             <p className="mb-2 text-sm font-medium text-lime">High Roller Funnel</p>
             <p className="mb-3 text-sm text-muted-foreground">If you have high-value players, create a group chat including you, the player, and the Spartans team:</p>
@@ -225,10 +356,12 @@ export default function OnboardingPage() {
               <span className="rounded-full bg-secondary px-3 py-1 text-cream">Discord: spartansl26</span>
             </div>
           </div>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* Cashback System */}
-        <Section id="cashback" title="Cashback System" icon="💸">
+    case "cashback":
+      return (
+        <ContentBlock title="Cashback System" icon="💸">
           <ul className="mb-4 space-y-2 text-muted-foreground">
             <li>Calculated weekly (Friday to Thursday)</li>
             <li>Paid every Friday</li>
@@ -237,10 +370,12 @@ export default function OnboardingPage() {
             <p className="font-serif text-sm text-cream">Net Position = Deposits - Withdrawals - Current Balance</p>
             <p className="mt-2 text-xs text-muted-foreground">CashRake only applies if the player is in net loss</p>
           </div>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* Giveaway */}
-        <Section id="giveaway" title="Giveaway Campaign" icon="🎁">
+    case "giveaway":
+      return (
+        <ContentBlock title="Giveaway Campaign" icon="🎁">
           <div className="mb-4 rounded-lg border border-lime/20 bg-lime/5 p-5">
             <p className="font-serif text-lg font-bold text-lime">Mansory Koenigsegg Jesko</p>
             <p className="text-sm text-muted-foreground">Spartans Edition (1/1)</p>
@@ -254,10 +389,12 @@ export default function OnboardingPage() {
             ))}
           </div>
           <p className="mt-4 text-sm text-lime">The more you play, the higher your chances.</p>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* Content Requirements */}
-        <Section id="content" title="Content Requirements" icon="📢">
+    case "content":
+      return (
+        <ContentBlock title="Content Requirements" icon="📢">
           <div className="mb-6">
             <p className="mb-3 text-sm font-medium text-cream">Twitch / Kick:</p>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
@@ -275,10 +412,12 @@ export default function OnboardingPage() {
               ))}
             </div>
           </div>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* Guidelines */}
-        <Section id="guidelines" title="Communication Guidelines" icon="🧠">
+    case "guidelines":
+      return (
+        <ContentBlock title="Communication Guidelines" icon="🧠">
           <div className="mb-6">
             <p className="mb-3 text-sm font-medium text-cream">Tone:</p>
             <div className="flex flex-wrap gap-2">
@@ -287,7 +426,6 @@ export default function OnboardingPage() {
               ))}
             </div>
           </div>
-
           <div className="mb-6">
             <p className="mb-3 text-sm font-medium text-cream">Key Messages:</p>
             <div className="space-y-2">
@@ -303,7 +441,6 @@ export default function OnboardingPage() {
               ))}
             </div>
           </div>
-
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-teal/30 bg-teal/5 p-5">
               <p className="mb-3 font-serif text-sm font-semibold text-teal">DO&apos;s</p>
@@ -326,10 +463,12 @@ export default function OnboardingPage() {
               </ul>
             </div>
           </div>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* Final Tips */}
-        <Section id="tips" title="Final Tips" icon="✨">
+    case "tips":
+      return (
+        <ContentBlock title="Final Tips" icon="✨">
           <div className="grid gap-3 sm:grid-cols-2">
             {[
               "Your promo code = your business",
@@ -342,56 +481,47 @@ export default function OnboardingPage() {
               </div>
             ))}
           </div>
-        </Section>
+        </ContentBlock>
+      );
 
-        {/* FAQ */}
-        <Section id="faq" title="FAQs" icon="💡">
+    case "faq":
+      return (
+        <ContentBlock title="FAQs" icon="💡">
           <div className="space-y-3">
-            <FaqCard
-              q="How does CashRake work?"
-              url="https://spartans.com/en/how-cashrake-works"
-            />
-            <FaqCard
-              q="How does the leaderboard work?"
-              url="https://spartansleaderboards.com/faq"
-            />
+            <FaqCard q="How does CashRake work?" url="https://spartans.com/en/how-cashrake-works" />
+            <FaqCard q="How does the leaderboard work?" url="https://spartansleaderboards.com/faq" />
           </div>
-        </Section>
-      </main>
+        </ContentBlock>
+      );
 
-      {/* Footer */}
-      <footer className="border-t border-border py-8 text-center">
-        <p className="text-xs text-muted-foreground">SPARTANS.COM &copy; 2026 All rights reserved</p>
-      </footer>
-    </div>
-  );
+    default:
+      return null;
+  }
 }
 
 /* ═══ Components ═══ */
 
-function Section({
-  id,
+function ContentBlock({
   title,
   icon,
   variant,
   children,
 }: {
-  id: string;
   title: string;
   icon: string;
   variant?: "warning";
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="mb-12 scroll-mt-24">
-      <div className="mb-4 flex items-center gap-3">
-        <div className={`flex h-8 w-8 items-center justify-center rounded-lg text-sm ${variant === "warning" ? "bg-red-500/20 text-red-400" : "bg-lime/10 text-lime"}`}>
+    <div>
+      <div className="mb-6 flex items-center gap-3">
+        <div className={`flex h-10 w-10 items-center justify-center rounded-xl text-base ${variant === "warning" ? "bg-red-500/20 text-red-400" : "bg-lime/10 text-lime"}`}>
           {icon}
         </div>
-        <h3 className="font-serif text-xl font-semibold text-cream">{title}</h3>
+        <h2 className="font-serif text-2xl font-bold text-cream">{title}</h2>
       </div>
-      <div className="pl-11">{children}</div>
-    </section>
+      <div className="pl-[52px]">{children}</div>
+    </div>
   );
 }
 
