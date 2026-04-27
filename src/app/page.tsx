@@ -27,7 +27,7 @@ const menuGroups = [
       { id: "vip", label: "VIP & High Roller", icon: "M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" },
       { id: "giveaway", label: "Giveaway Campaign", icon: "M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" },
       { id: "content", label: "Content Requirements", icon: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" },
-      { id: "guidelines", label: "Communication Guidelines", icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" },
+      { id: "guidelines", label: "Guidelines", icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" },
       { id: "tips", label: "Final Tips", icon: "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" },
       { id: "faq", label: "FAQs", icon: "M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
     ],
@@ -440,6 +440,22 @@ function SectionContent({ id }: { id: string }) {
           <p className="mt-4 text-sm text-muted-foreground">
             Leaderboards can be adjusted during setup. Once created, no changes can be made.
           </p>
+
+          {/* Leaderboard FAQs */}
+          <div className="mt-8">
+            <p className="mb-3 text-sm font-medium text-cream">Frequently Asked Questions</p>
+            <div className="space-y-3">
+              <FaqAccordion q="How do I participate in the leaderboard?" a="When registering, add the specific referral code of the leaderboard you want to join. Your gaming activities will be automatically tracked and counted toward your progress once registered with the correct code." />
+              <FaqAccordion q="What are Spartans Points (SP)?" a="SP are the scoring currency of the leaderboard. You earn SP based on the house edge of games you bet on. Casino games generate SP equivalent to the house edge (e.g., 3.5% house edge = 3.5 SP per dollar wagered). Sports betting generates 2 SP per dollar wagered. Typical slots generate 3.5–4 SP per dollar wagered." />
+              <FaqAccordion q="How are Spartans Points calculated?" a="SP = House Edge % × Amount Wagered (for casino). Sports betting: fixed 2 SP per dollar wagered. The more SP you accumulate, the higher your ranking." />
+              <FaqAccordion q="When do leaderboard competitions happen?" a="Each leaderboard has a specific competition period which may vary. Start/end dates and schedules are communicated on the leaderboard page." />
+              <FaqAccordion q="How are prizes distributed?" a="Prizes are distributed automatically at the end of each competition based on your final SP ranking. Processing may take up to 7 days. To be eligible for withdrawal, rewards must be wagered at least once at minimum odds of 1.30 (Decimal) / -333 (American) / 3/10 (Fractional). This also applies to Casino Crash games." />
+              <FaqAccordion q="What is considered prohibited behavior?" a="Prohibited behavior includes data manipulation, exploitation of technical glitches, collusion to inflate SP, low-risk gaming only to accumulate SP, or any fraud/system abuse. Players may be disqualified and banned." />
+              <FaqAccordion q="Can I transfer SP between leaderboards?" a="No. Spartans Points are specific to each leaderboard and cannot be transferred. Each leaderboard has its own independent SP accumulator." />
+              <FaqAccordion q="Which game gives me the most SP?" a="Games with higher house edges generate more SP per dollar wagered. Check the RTP and house edge for each game on Spartans.com to determine which games earn the most SP." />
+              <FaqAccordion q="How do I contact support?" a={<>Questions about the leaderboard? Contact support via live chat on Spartans.com or email <a href="mailto:support@spartans.com" className="text-teal underline hover:text-lime">support@spartans.com</a>.</>} />
+            </div>
+          </div>
         </ContentBlock>
       );
 
@@ -608,19 +624,8 @@ function SectionContent({ id }: { id: string }) {
 
     case "faq":
       return (
-        <ContentBlock title="FAQs" icon="💡">
-          <div className="space-y-3">
-            <p className="text-sm font-medium text-lime">Leaderboard</p>
-            <FaqAccordion q="How do I participate in the leaderboard?" a="When registering, add the specific referral code of the leaderboard you want to join. Your gaming activities will be automatically tracked and counted toward your progress once registered with the correct code." />
-            <FaqAccordion q="What are Spartans Points (SP)?" a="SP are the scoring currency of the leaderboard. You earn SP based on the house edge of games you bet on. Casino games generate SP equivalent to the house edge (e.g., 3.5% house edge = 3.5 SP per dollar wagered). Sports betting generates 2 SP per dollar wagered. Typical slots generate 3.5–4 SP per dollar wagered." />
-            <FaqAccordion q="How are Spartans Points calculated?" a="SP = House Edge % × Amount Wagered (for casino). Sports betting: fixed 2 SP per dollar wagered. The more SP you accumulate, the higher your ranking." />
-            <FaqAccordion q="When do leaderboard competitions happen?" a="Each leaderboard has a specific competition period which may vary. Start/end dates and schedules are communicated on the leaderboard page." />
-            <FaqAccordion q="How are prizes distributed?" a="Prizes are distributed automatically at the end of each competition based on your final SP ranking. Processing may take up to 7 days. To be eligible for withdrawal, rewards must be wagered at least once at minimum odds of 1.30 (Decimal) / -333 (American) / 3/10 (Fractional). This also applies to Casino Crash games." />
-            <FaqAccordion q="What is considered prohibited behavior?" a="Prohibited behavior includes data manipulation, exploitation of technical glitches, collusion to inflate SP, low-risk gaming only to accumulate SP, or any fraud/system abuse. Players may be disqualified and banned." />
-            <FaqAccordion q="Can I transfer SP between leaderboards?" a="No. Spartans Points are specific to each leaderboard and cannot be transferred. Each leaderboard has its own independent SP accumulator." />
-            <FaqAccordion q="Which game gives me the most SP?" a="Games with higher house edges generate more SP per dollar wagered. Check the RTP and house edge for each game on Spartans.com to determine which games earn the most SP." />
-            <FaqAccordion q="How do I contact support?" a={<>Questions about the leaderboard? Contact support via live chat on Spartans.com or email <a href="mailto:support@spartans.com" className="text-teal underline hover:text-lime">support@spartans.com</a>.</>} />
-          </div>
+        <ContentBlock title="FAQs">
+          <p className="text-sm text-muted-foreground">Coming soon.</p>
         </ContentBlock>
       );
 
@@ -633,24 +638,17 @@ function SectionContent({ id }: { id: string }) {
 
 function ContentBlock({
   title,
-  icon,
-  variant,
   children,
 }: {
   title: string;
-  icon: string;
+  icon?: string;
   variant?: "warning";
   children: React.ReactNode;
 }) {
   return (
     <div>
-      <div className="mb-6 flex items-center gap-3">
-        <div className={`flex h-10 w-10 items-center justify-center rounded-xl text-base ${variant === "warning" ? "bg-red-500/20 text-red-400" : "bg-lime/10 text-lime"}`}>
-          {icon}
-        </div>
-        <h2 className="font-serif text-2xl font-bold text-cream">{title}</h2>
-      </div>
-      <div className="pl-[52px]">{children}</div>
+      <h2 className="mb-6 font-serif text-2xl font-bold text-cream">{title}</h2>
+      <div>{children}</div>
     </div>
   );
 }
